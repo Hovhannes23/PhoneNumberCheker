@@ -18,9 +18,9 @@ public class Test {
     ('79260595365', "2019-05-03 11:55:36");
 
 
-   Create EVENT_LOG (
-           tel_num VARCHAR(11) NOT NULL PRIMARY KEY
-           event_date   TIMESTAMP
+   Create table EVENT_LOG (
+           tel_num VARCHAR(11) NOT NULL PRIMARY KEY,
+           event_date   TIMESTAMP,
            decision VARCHAR(20)
-   )
+   );
 }
