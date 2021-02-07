@@ -30,4 +30,13 @@ public class EventLog {
         this.eventDate = eventDate;
         this.decision = decision;
     }
+
+    @Override
+    public String toString() {
+        return "EventLog{" +
+                "telNum='" + telNum + '\'' +
+                ", eventDate=" + eventDate +
+                ", decision='" + decision + '\'' +
+                '}';
+    }
 }
