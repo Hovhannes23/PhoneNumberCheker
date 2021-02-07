@@ -3,6 +3,7 @@ package phone.number.cheker.demo;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import phone.number.cheker.demo.service.AService;
 
