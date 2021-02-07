@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component;
 import phone.number.cheker.demo.service.AService;
 import phone.number.cheker.demo.service.BService;
 
+
+/** This class checks in which tables tel_num exists and returns state */
 @Component
 public class TelNumCheker {
 
@@ -16,6 +18,11 @@ public class TelNumCheker {
     BService bService
             ;
 
+    /**
+     *  Method checks in which tables tel_num exists and returns state
+     * @param telNum is the tel_num which existence the method checks
+     * @return status - which can be among options: DECLINE, CHALLENGE, ACCEPT
+     * */
     public String checkTelNum(String telNum) {
         String status = "";
         if (aService.existsById(telNum) && bService.existsById(telNum))
