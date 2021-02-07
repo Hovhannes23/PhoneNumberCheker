@@ -1,12 +1,9 @@
 package phone.number.cheker.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import javax.persistence.Column;
+import phone.number.cheker.demo.service.TelNumService;
+import phone.number.cheker.demo.service.TelNumServiceB;
 
 @Component
 public class TelNumCheker {

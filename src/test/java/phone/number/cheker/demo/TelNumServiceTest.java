@@ -3,8 +3,7 @@ package phone.number.cheker.demo;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import static org.junit.Assert.*;
+import phone.number.cheker.demo.service.TelNumService;
 
 public class TelNumServiceTest {
 

@@ -1,4 +1,4 @@
-package phone.number.cheker.demo;
+package phone.number.cheker.demo.entity;
 
 
 import javax.persistence.Column;

@@ -5,12 +5,10 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
-import phone.number.cheker.demo.EventLog;
-import phone.number.cheker.demo.EventLogService;
-import org.springframework.ui.Model;
+import phone.number.cheker.demo.entity.EventLog;
+import phone.number.cheker.demo.service.EventLogService;
 
 import java.time.LocalDateTime;
 

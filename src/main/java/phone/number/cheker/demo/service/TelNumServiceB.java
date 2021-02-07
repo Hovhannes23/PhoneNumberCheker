@@ -1,20 +1,20 @@
-package phone.number.cheker.demo;
+package phone.number.cheker.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import phone.number.cheker.demo.repository.TelNumRepositoryB;
 
 @Service
-public class TelNumService {
+public class TelNumServiceB {
 
-
-    TelNumRepository repo;
+    TelNumRepositoryB repo;
 
     @Autowired
-    public TelNumService(TelNumRepository repo){
+    public TelNumServiceB(TelNumRepositoryB repo){
         this.repo = repo;
     }
 
-    public TelNumService() {
+    public TelNumServiceB() {
     }
 
     public boolean existsById(String s){

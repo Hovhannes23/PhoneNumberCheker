@@ -1,12 +1,12 @@
-package phone.number.cheker.demo;
+package phone.number.cheker.demo.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 
 @Entity
-@Table(name ="B")
-public class B {
+@Table(name ="A")
+public class A {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,10 +17,10 @@ public class B {
     private LocalDateTime addDate;
 
 
-    public B() {
+    public A() {
     }
 
-    public B(String telNum){
+    public A(String telNum){
         this.id = telNum;
         this.addDate = LocalDateTime.now();
     }
