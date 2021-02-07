@@ -8,7 +8,7 @@
 <body>
 
  <form action="/checkTelNum" method="get">
-     <input class="keyword" type="text" name="telNum" minlength="11" maxlength="11" required>
+     <input class="keyword" type="text" name="telNum" pattern="7\d{10}" placeholder="Например, 79151234567" minlength="11" maxlength="11" required>
      <p><input class="form_input" type="submit" value="Проверить номер"></p>
  </form>
 
