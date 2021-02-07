@@ -6,7 +6,25 @@
 </head>
 <body>
 
-Статус номера <p th:text="${telNum}">: <p th:text="${status}">
+<table class="content-table" th:width="200px">
+    <thead>
+    <tr>
+        <th th:width="150px">Телефонный номер</th>
+        <th th:width="50px">Статус</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${telNum}"> </td>
+        <td th:text="${status}"> </td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/" method="get">
+    <p><input class="form_input" type="submit" value="Проверить другой номер"></p>
+</form>
+
 
 </body>
 </html>

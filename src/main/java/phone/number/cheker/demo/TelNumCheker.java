@@ -2,23 +2,25 @@ package phone.number.cheker.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import phone.number.cheker.demo.service.TelNumService;
-import phone.number.cheker.demo.service.TelNumServiceB;
+import phone.number.cheker.demo.service.AService;
+import phone.number.cheker.demo.service.BService;
 
 @Component
 public class TelNumCheker {
 
     @Autowired
-    TelNumService service;
+    AService aService;
 
     @Autowired
-    TelNumServiceB serviceB;
+
+    BService bService
+            ;
 
     public String checkTelNum(String telNum) {
         String status = "";
-        if (service.existsById(telNum) && serviceB.existsById(telNum))
+        if (aService.existsById(telNum) && bService.existsById(telNum))
             status = "DECLINE";
-        else if (service.existsById(telNum) || serviceB.existsById(telNum))
+        else if (aService.existsById(telNum) || bService.existsById(telNum))
             status = "CHALLENGE";
         else status = "ACCEPT";
 

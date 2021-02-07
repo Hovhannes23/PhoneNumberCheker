@@ -3,12 +3,14 @@ package phone.number.cheker.demo;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import phone.number.cheker.demo.service.TelNumService;
+import org.springframework.stereotype.Component;
+import phone.number.cheker.demo.service.AService;
 
-public class TelNumServiceTest {
+@Component
+public class AServiceTest {
 
     @Autowired
-    TelNumService service;
+    AService service;
 
     @Test
     public  void existsById(){
