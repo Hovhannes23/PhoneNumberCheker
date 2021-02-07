@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MyController {
@@ -16,15 +17,25 @@ public class MyController {
     TelNumServiceB serviceB;
 
     @RequestMapping("/")
-    public String mainPage(Model model){
+    public String mainPage() {
+        return "mainPage";
+    }
+
+    @RequestMapping("/checkTelNum")
+    public String checkTelNum(@RequestParam String telNum, Model model){
         String status="";
-       if(service.existsById("79155241474")&& serviceB.existsById("79155241474"))
+       if(service.existsById(telNum)&& serviceB.existsById(telNum))
           status="DECLINE";
-       else if(service.existsById("79155241474")||serviceB.existsById("79155241474"))
+       else if(service.existsById(telNum)||serviceB.existsById(telNum))
           status="CHALLENGE";
        else status="ACCEPT";
 
        model.addAttribute("status", status);
-       return "index";
+       model.addAttribute("telNum", telNum);
+       return "checkPage";
     }
+
+
+
+
 }
