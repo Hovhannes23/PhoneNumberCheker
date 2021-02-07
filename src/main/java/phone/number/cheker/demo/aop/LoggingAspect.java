@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import phone.number.cheker.demo.EventLog;
 import phone.number.cheker.demo.EventLogService;
+import org.springframework.ui.Model;
 
 import java.time.LocalDateTime;
 
@@ -20,7 +21,7 @@ public class LoggingAspect {
     @Autowired
     EventLogService service;
 
-    @AfterReturning ("execution (public String checkTelNum (..))")
+    @AfterReturning ("execution (public String checkTelNum (String,*))")
     public void afterReturningMainPageAdvice(JoinPoint jp){
 
        Object[] args = jp.getArgs();
