@@ -15,4 +15,8 @@ public class EventLogService {
     public void  save(EventLog eventLog){
         repo.save(eventLog);
     }
+
+    public EventLog getById(String id){
+        return repo.getOne(id);
+    }
 }

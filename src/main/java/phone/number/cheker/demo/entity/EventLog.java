@@ -35,6 +35,30 @@ public class EventLog {
         this.decision = decision;
     }
 
+    public String getTelNum() {
+        return telNum;
+    }
+
+    public void setTelNum(String telNum) {
+        this.telNum = telNum;
+    }
+
+    public LocalDateTime getEventDate() {
+        return eventDate;
+    }
+
+    public void setEventDate(LocalDateTime eventDate) {
+        this.eventDate = eventDate;
+    }
+
+    public String getDecision() {
+        return decision;
+    }
+
+    public void setDecision(String decision) {
+        this.decision = decision;
+    }
+
     @Override
     public String toString() {
         return "EventLog{" +
@@ -42,5 +66,29 @@ public class EventLog {
                 ", eventDate=" + eventDate +
                 ", decision='" + decision + '\'' +
                 '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + telNum.hashCode();
+        result = 31 * result + eventDate.hashCode();
+        result = 31 * result + decision.hashCode();
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (o == this) return true;
+        if (!(o instanceof EventLog)) {
+            return false;
+        }
+
+        EventLog eventLog = (EventLog) o;
+
+        return eventLog.telNum.equals(telNum) &&
+                eventLog.eventDate.equals(eventDate) &&
+                eventLog.decision.equals(decision);
     }
 }
