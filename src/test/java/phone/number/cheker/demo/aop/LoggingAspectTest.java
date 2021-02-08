@@ -9,7 +9,7 @@ public class LoggingAspectTest {
     @Test
     public void afterReturningMainPageAdvice() {
 
-        Assert.
+
     }
 
 }
