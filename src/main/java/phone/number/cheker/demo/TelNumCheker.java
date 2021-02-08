@@ -14,7 +14,7 @@ public class TelNumCheker {
     AService aService;
 
     @Autowired
-    BService bServic;
+    BService bService;
 
     /**
      *  Method checks in which tables tel_num exists and returns state
