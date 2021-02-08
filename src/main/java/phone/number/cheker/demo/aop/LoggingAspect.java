@@ -23,13 +23,13 @@ public class LoggingAspect {
     public void afterReturningMainPageAdvice(JoinPoint jp){
 
        Object[] args = jp.getArgs();
-       String s = (String) args[0];
+       String telNum = (String) args[0];
        Model model = (Model) args[1];
 
-        LocalDateTime now = LocalDateTime.now();
+       LocalDateTime now = LocalDateTime.now();
        String  status = (String) model.getAttribute("status");
 
-        EventLog eventLog = new EventLog(s,now, status);
+       EventLog eventLog = new EventLog(telNum,now, status);
 
        service.save(eventLog);
 
