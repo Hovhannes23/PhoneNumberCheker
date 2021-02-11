@@ -10,7 +10,7 @@ public class BService {
     BRepository repo;
 
     @Autowired
-    public BService(BRepository repo){
+    public BService(BRepository repo) {
         this.repo = repo;
     }
 

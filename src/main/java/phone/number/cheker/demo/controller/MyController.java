@@ -11,8 +11,13 @@ import phone.number.cheker.demo.TelNumCheker;
 @Controller
 public class MyController {
 
-    @Autowired
+
     TelNumCheker telNumCheker;
+
+    @Autowired
+    public MyController(TelNumCheker telNumCheker) {
+        this.telNumCheker = telNumCheker;
+    }
 
     @RequestMapping("/")
     public String mainPage() {

@@ -9,8 +9,12 @@ import phone.number.cheker.demo.repository.EventLogRepository;
 @Service
 public class EventLogService {
 
-    @Autowired
     EventLogRepository repo;
+
+    @Autowired
+    public EventLogService(EventLogRepository repo) {
+        this.repo = repo;
+    }
 
     public void  save(EventLog eventLog){
         repo.save(eventLog);

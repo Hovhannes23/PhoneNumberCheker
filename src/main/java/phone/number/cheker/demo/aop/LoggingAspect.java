@@ -16,8 +16,12 @@ import java.time.LocalDateTime;
 @Aspect
 public class LoggingAspect {
 
-    @Autowired
     EventLogService service;
+
+    @Autowired
+    public LoggingAspect( EventLogService service) {
+        this.service = service;
+    }
 
     @AfterReturning ("execution (public String checkTelNum (String,*))")
     public void afterReturningMainPageAdvice(JoinPoint jp){

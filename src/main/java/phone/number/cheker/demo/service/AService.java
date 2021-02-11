@@ -7,11 +7,11 @@ import phone.number.cheker.demo.repository.ARepository;
 @Service
 public class AService {
 
-
-    @Autowired
     ARepository repo;
 
-    public AService() {
+    @Autowired
+    public AService(ARepository repo) {
+        this.repo = repo;
     }
 
     public boolean existsById(String s){

@@ -10,7 +10,6 @@ public class A {
 
     /** Use column tel_num as id */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "tel_num")
     private String id;
 
