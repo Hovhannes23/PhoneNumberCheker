@@ -5,16 +5,21 @@ import org.springframework.stereotype.Component;
 import phone.number.cheker.demo.service.AService;
 import phone.number.cheker.demo.service.BService;
 
+import java.util.AbstractSequentialList;
+
 
 /** This class checks in which tables tel_num exists and returns state */
 @Component
 public class TelNumCheker {
 
-    @Autowired
     AService aService;
+    BService bService;
 
     @Autowired
-    BService bService;
+    public TelNumCheker(AService aService, BService bService) {
+        this.aService = aService;
+        this.bService = bService;
+    }
 
     /**
      *  Method checks in which tables tel_num exists and returns state

@@ -28,14 +28,16 @@ public class LoggingAspectTest {
     @Test
     public void afterReturningMainPageAdvice() {
 
+        Long id = 1L;
         String telNum = "79260595365";
         LocalDateTime localDateTime = LocalDateTime.of(2017,12,2,15, 5);
         String decision = "CHALLENGE";
 
         EventLog expected = new EventLog(telNum,localDateTime,decision);
+        expected.setLogId(id);
 
         service.save(expected);
-        EventLog actual = service.getById(telNum);
+        EventLog actual = service.getById(id);
 
         System.out.println(expected);
         System.out.println(actual);

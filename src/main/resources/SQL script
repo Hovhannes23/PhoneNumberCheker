@@ -38,7 +38,8 @@ INSERT INTO B (tel_num, add_date) VALUES
 
 
 Create table EVENT_LOG (
-   tel_num VARCHAR(11) NOT NULL PRIMARY KEY,
+   log_id BIGINT NOT NULL PRIMARY KEY,
+   tel_num VARCHAR(11),
    event_date   TIMESTAMP,
    decision VARCHAR(20)
 );

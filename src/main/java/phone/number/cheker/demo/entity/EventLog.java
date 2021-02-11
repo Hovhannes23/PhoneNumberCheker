@@ -1,19 +1,25 @@
 package phone.number.cheker.demo.entity;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.GeneratorType;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
-/** This class is an entity of table EVENT_LOG  */
+/** This class is an entity of
+ *
+ */
+
 @Entity
 @Table(name = "event_log")
 public class EventLog {
 
     /** Use column tel_num as id */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "log_id")
+    private long logId;
+
     @Column(name = "tel_num")
     private String telNum;
 
@@ -33,6 +39,10 @@ public class EventLog {
         this.telNum = telNum;
         this.eventDate = eventDate;
         this.decision = decision;
+    }
+
+    public void setLogId(Long logId){
+        this.logId = logId;
     }
 
     public String getTelNum() {

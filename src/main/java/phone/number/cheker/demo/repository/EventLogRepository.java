@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import phone.number.cheker.demo.entity.EventLog;
 
 @Repository
-public interface EventLogRepository extends JpaRepository<EventLog,String> {
+public interface EventLogRepository extends JpaRepository<EventLog,Long> {
 
     @Override
     <S extends EventLog> S save(S s);

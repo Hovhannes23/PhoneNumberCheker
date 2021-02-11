@@ -20,7 +20,7 @@ public class EventLogService {
         repo.save(eventLog);
     }
 
-    public EventLog getById(String id){
+    public EventLog getById(Long id){
         return repo.getOne(id);
     }
 }
