@@ -5,6 +5,7 @@ import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /** This class is an entity of
  *
@@ -80,25 +81,12 @@ public class EventLog {
 
     @Override
     public int hashCode() {
-        int result = 17;
-        result = 31 * result + telNum.hashCode();
-        result = 31 * result + eventDate.hashCode();
-        result = 31 * result + decision.hashCode();
-        return result;
+       return Objects.hashCode(this);
     }
 
     @Override
     public boolean equals(Object o) {
+       return Objects.equals(this,(EventLog)o);
 
-        if (o == this) return true;
-        if (!(o instanceof EventLog)) {
-            return false;
-        }
-
-        EventLog eventLog = (EventLog) o;
-
-        return eventLog.telNum.equals(telNum) &&
-                eventLog.eventDate.equals(eventDate) &&
-                eventLog.decision.equals(decision);
     }
 }
