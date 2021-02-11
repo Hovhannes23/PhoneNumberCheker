@@ -80,13 +80,18 @@ public class EventLog {
     }
 
     @Override
-    public int hashCode() {
-       return Objects.hashCode(this);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EventLog eventLog = (EventLog) o;
+        return logId == eventLog.logId &&
+                Objects.equals(getTelNum(), eventLog.getTelNum()) &&
+                Objects.equals(getEventDate(), eventLog.getEventDate()) &&
+                Objects.equals(getDecision(), eventLog.getDecision());
     }
 
     @Override
-    public boolean equals(Object o) {
-       return Objects.equals(this,(EventLog)o);
-
+    public int hashCode() {
+        return Objects.hashCode(this);
     }
 }
