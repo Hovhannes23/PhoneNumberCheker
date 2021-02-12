@@ -40,9 +40,9 @@ public class TelNumCheker {
         TelNumStatus telNumStatus = TelNumStatus.ACCEPT;
 
         if (aService.existsById(telNum) && bService.existsById(telNum))
-            telNumStatus = telNumStatus.DECLINE;
+            telNumStatus = TelNumStatus.DECLINE;
         else if (aService.existsById(telNum) || bService.existsById(telNum))
-            telNumStatus = telNumStatus.CHALLENGE;
+            telNumStatus = TelNumStatus.CHALLENGE;
 
         return telNumStatus;
     }
