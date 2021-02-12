@@ -1,4 +1,4 @@
-package phone.number.cheker.demo.entity;
+package phone.number.cheker.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

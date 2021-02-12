@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import phone.number.cheker.demo.entity.EventLog;
 import phone.number.cheker.demo.service.EventLogService;
-import phone.number.cheker.demo.entity.ResponseStatus;
+
 import java.time.LocalDateTime;
 
 @Component
