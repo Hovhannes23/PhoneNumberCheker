@@ -6,9 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 import phone.number.cheker.demo.TelNumCheker;
+import phone.number.cheker.demo.entity.ResponseStatus;
 
-@Controller
+
+@RestController
 public class MyController {
 
 
@@ -24,15 +28,24 @@ public class MyController {
         return "mainPage";
     }
 
+//    @RequestMapping("/checkTelNum")
+//    public String checkTelNum(@RequestParam String telNum, Model model){
+//      String status =  telNumCheker.checkTelNum(telNum);
+//       model.addAttribute("status", status);
+//       model.addAttribute("telNum", telNum);
+//       return "checkPage";
+//    }
+
     @RequestMapping("/checkTelNum")
-    public String checkTelNum(@RequestParam String telNum, Model model){
-      String status =  telNumCheker.checkTelNum(telNum);
-       model.addAttribute("status", status);
-       model.addAttribute("telNum", telNum);
-       return "checkPage";
+    public ResponseStatus checkTelNum(@RequestParam String telNum, Model model){
+        String status =  telNumCheker.checkTelNum(telNum);
+        ResponseStatus responseStatus = new ResponseStatus();
+        responseStatus.setStatus(status);
+
+        System.out.println(responseStatus);
+        return responseStatus;
+
+
     }
-
-
-
 
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import phone.number.cheker.demo.entity.EventLog;
 import phone.number.cheker.demo.service.EventLogService;
-
+import phone.number.cheker.demo.entity.ResponseStatus;
 import java.time.LocalDateTime;
 
 @Component
@@ -23,7 +23,7 @@ public class LoggingAspect {
         this.service = service;
     }
 
-    @AfterReturning ("execution (public String checkTelNum (String,*))")
+    @AfterReturning ("execution (public  String checkTelNum (String,*))")
     public void afterReturningMainPageAdvice(JoinPoint jp){
 
        Object[] args = jp.getArgs();
