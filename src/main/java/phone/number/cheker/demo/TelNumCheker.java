@@ -6,6 +6,8 @@ import phone.number.cheker.demo.service.AService;
 import phone.number.cheker.demo.service.BService;
 
 import java.util.AbstractSequentialList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /** This class checks in which tables tel_num exists and returns state */
@@ -27,7 +29,13 @@ public class TelNumCheker {
      * @param telNum is the tel_num which existence the method checks
      * @return status - which can be among options: DECLINE, CHALLENGE, ACCEPT
      * */
-    public TelNumStatus checkTelNum(String telNum) {
+    public TelNumStatus checkTelNum(String telNum) throws Exception {
+
+     Pattern pattern = Pattern.compile("^7\\d{10}$");
+     Matcher matcher = pattern.matcher(telNum);
+
+     if(!matcher.matches())
+         throw new Exception("Введите номер телефона в формате 71234567890");
 
         TelNumStatus telNumStatus = TelNumStatus.ACCEPT;
 

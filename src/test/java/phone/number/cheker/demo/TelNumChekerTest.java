@@ -20,7 +20,7 @@ public class TelNumChekerTest {
     TelNumCheker telNumCheker;
 
     @Test
-    public void checkTelNumForCHALLENGE() {
+    public void checkTelNumForCHALLENGE() throws Exception {
 
         TelNumStatus expectedStatus = TelNumStatus.CHALLENGE;
         String telNum = "79152150563";
@@ -32,7 +32,7 @@ public class TelNumChekerTest {
     }
 
     @Test
-    public void checkTelNumForDECLINE() {
+    public void checkTelNumForDECLINE() throws Exception {
 
         TelNumStatus expectedStatus = TelNumStatus.DECLINE;
         String telNum = "79155241474";
@@ -44,7 +44,7 @@ public class TelNumChekerTest {
     }
 
     @Test
-    public void checkTelNumForACCEPT() {
+    public void checkTelNumForACCEPT() throws Exception {
 
         TelNumStatus expectedStatus = TelNumStatus.ACCEPT;
         String telNum = "79160585965";

@@ -13,7 +13,6 @@ import java.net.URI;
 @Data
 public class ResponseStatus implements Serializable {
 
-
     TelNumStatus status;
 
 }

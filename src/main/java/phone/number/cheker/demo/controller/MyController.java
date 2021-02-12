@@ -11,6 +11,8 @@ import phone.number.cheker.demo.TelNumCheker;
 import phone.number.cheker.demo.ResponseStatus;
 import phone.number.cheker.demo.TelNumStatus;
 
+import java.nio.channels.ScatteringByteChannel;
+
 
 @Controller
 public class MyController {
@@ -32,9 +34,20 @@ public class MyController {
     @RequestMapping("/checkTelNum")
     @ResponseBody
     public ResponseStatus checkTelNum(@RequestParam String telNum, Model model){
-        TelNumStatus status =  telNumCheker.checkTelNum(telNum);
+
+        TelNumStatus status = null;
+
+        try {
+          status = telNumCheker.checkTelNum(telNum);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
         ResponseStatus responseStatus = new ResponseStatus();
         responseStatus.setStatus(status);
+
+        model.addAttribute("status",status);
 
         System.out.println(responseStatus);
         return responseStatus;

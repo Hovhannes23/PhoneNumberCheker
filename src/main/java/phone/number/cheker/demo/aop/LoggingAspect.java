@@ -7,6 +7,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
+import phone.number.cheker.demo.ResponseStatus;
 import phone.number.cheker.demo.entity.EventLog;
 import phone.number.cheker.demo.service.EventLogService;
 
@@ -17,13 +18,14 @@ import java.time.LocalDateTime;
 public class LoggingAspect {
 
     EventLogService service;
+    ResponseStatus responseStatus;
 
     @Autowired
     public LoggingAspect( EventLogService service) {
         this.service = service;
     }
 
-    @AfterReturning ("execution (public  String checkTelNum (String,*))")
+    @AfterReturning ("execution (public ResponseStatus checkTelNum (String,*))")
     public void afterReturningMainPageAdvice(JoinPoint jp){
 
        Object[] args = jp.getArgs();
@@ -31,9 +33,11 @@ public class LoggingAspect {
        Model model = (Model) args[1];
 
        LocalDateTime now = LocalDateTime.now();
-       String  status = (String) model.getAttribute("status");
+       ResponseStatus  responseStatus =  (ResponseStatus) model.getAttribute("status");
+        assert responseStatus != null;
+        String status = responseStatus.getStatus().name();
 
-       EventLog eventLog = new EventLog(telNum,now, status);
+       EventLog eventLog = new EventLog(telNum,now,status);
 
        service.save(eventLog);
 
