@@ -39,9 +39,12 @@ public class TelNumCheker {
 
         TelNumStatus telNumStatus = TelNumStatus.ACCEPT;
 
-        if (aService.existsById(telNum) && bService.existsById(telNum))
+        boolean existsInA = aService.existsById(telNum);
+        boolean existsInB = bService.existsById(telNum);
+        
+        if (existsInA && existsInB)
             telNumStatus = TelNumStatus.DECLINE;
-        else if (aService.existsById(telNum) || bService.existsById(telNum))
+        else if (existsInA || existsInB)
             telNumStatus = TelNumStatus.CHALLENGE;
 
         return telNumStatus;
