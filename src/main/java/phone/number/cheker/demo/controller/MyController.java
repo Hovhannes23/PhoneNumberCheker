@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import phone.number.cheker.demo.TelNumCheker;
 import phone.number.cheker.demo.ResponseStatus;
+import phone.number.cheker.demo.TelNumStatus;
 
 
 @RestController
@@ -35,7 +36,7 @@ public class MyController {
 
     @RequestMapping("/checkTelNum")
     public ResponseStatus checkTelNum(@RequestParam String telNum, Model model){
-        String status =  telNumCheker.checkTelNum(telNum);
+        TelNumStatus status =  telNumCheker.checkTelNum(telNum);
         ResponseStatus responseStatus = new ResponseStatus();
         responseStatus.setStatus(status);
 

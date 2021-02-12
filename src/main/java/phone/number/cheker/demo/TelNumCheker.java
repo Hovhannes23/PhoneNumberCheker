@@ -19,6 +19,7 @@ public class TelNumCheker {
     public TelNumCheker(AService aService, BService bService) {
         this.aService = aService;
         this.bService = bService;
+
     }
 
     /**
@@ -26,14 +27,15 @@ public class TelNumCheker {
      * @param telNum is the tel_num which existence the method checks
      * @return status - which can be among options: DECLINE, CHALLENGE, ACCEPT
      * */
-    public String checkTelNum(String telNum) {
-        String status = "";
-        if (aService.existsById(telNum) && bService.existsById(telNum))
-            status = "DECLINE";
-        else if (aService.existsById(telNum) || bService.existsById(telNum))
-            status = "CHALLENGE";
-        else status = "ACCEPT";
+    public TelNumStatus checkTelNum(String telNum) {
 
-        return status;
+        TelNumStatus telNumStatus = TelNumStatus.ACCEPT;
+
+        if (aService.existsById(telNum) && bService.existsById(telNum))
+            telNumStatus = telNumStatus.DECLINE;
+        else if (aService.existsById(telNum) || bService.existsById(telNum))
+            telNumStatus = telNumStatus.CHALLENGE;
+
+        return telNumStatus;
     }
 }

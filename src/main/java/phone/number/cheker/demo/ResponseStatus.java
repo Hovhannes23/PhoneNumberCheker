@@ -12,17 +12,19 @@ import java.net.URI;
 public class ResponseStatus implements Serializable {
 
 
-    String status="";
+    TelNumStatus status;
 
 
     public ResponseStatus( ) {
     }
 
-    public String getStatus() {
+    public TelNumStatus getStatus()
+    {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(TelNumStatus status) {
+
         this.status = status;
     }
 

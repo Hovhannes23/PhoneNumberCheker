@@ -22,10 +22,10 @@ public class TelNumChekerTest {
     @Test
     public void checkTelNumForCHALLENGE() {
 
-        String expectedStatus = "CHALLENGE";
+        TelNumStatus expectedStatus = TelNumStatus.CHALLENGE;
         String telNum = "79152150563";
 
-        String actualStatus = telNumCheker.checkTelNum(telNum);
+        TelNumStatus actualStatus = telNumCheker.checkTelNum(telNum);
 
         Assert.assertEquals(expectedStatus, actualStatus);
 
@@ -34,10 +34,10 @@ public class TelNumChekerTest {
     @Test
     public void checkTelNumForDECLINE() {
 
-        String expectedStatus = "DECLINE";
+        TelNumStatus expectedStatus = TelNumStatus.DECLINE;
         String telNum = "79155241474";
 
-        String actualStatus = telNumCheker.checkTelNum(telNum);
+        TelNumStatus actualStatus = telNumCheker.checkTelNum(telNum);
 
         Assert.assertEquals(expectedStatus, actualStatus);
 
@@ -46,10 +46,10 @@ public class TelNumChekerTest {
     @Test
     public void checkTelNumForACCEPT() {
 
-        String expectedStatus = "ACCEPT";
+        TelNumStatus expectedStatus = TelNumStatus.ACCEPT;
         String telNum = "79160585965";
 
-        String actualStatus = telNumCheker.checkTelNum(telNum);
+        TelNumStatus actualStatus = telNumCheker.checkTelNum(telNum);
 
         Assert.assertEquals(expectedStatus, actualStatus);
 
