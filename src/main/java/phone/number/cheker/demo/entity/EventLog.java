@@ -1,6 +1,7 @@
 package phone.number.cheker.demo.entity;
 
 
+import lombok.Data;
 import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "event_log")
+@Data
 public class EventLog {
 
     /** Use column tel_num as id */
@@ -42,56 +44,19 @@ public class EventLog {
         this.decision = decision;
     }
 
-    public void setLogId(Long logId){
-        this.logId = logId;
-    }
-
-    public String getTelNum() {
-        return telNum;
-    }
-
-    public void setTelNum(String telNum) {
-        this.telNum = telNum;
-    }
-
-    public LocalDateTime getEventDate() {
-        return eventDate;
-    }
-
-    public void setEventDate(LocalDateTime eventDate) {
-        this.eventDate = eventDate;
-    }
-
-    public String getDecision() {
-        return decision;
-    }
-
-    public void setDecision(String decision) {
-        this.decision = decision;
-    }
-
-    @Override
-    public String toString() {
-        return "EventLog{" +
-                "telNum='" + telNum + '\'' +
-                ", eventDate=" + eventDate +
-                ", decision='" + decision + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        EventLog eventLog = (EventLog) o;
-        return logId == eventLog.logId &&
-                Objects.equals(getTelNum(), eventLog.getTelNum()) &&
-                Objects.equals(getEventDate(), eventLog.getEventDate()) &&
-                Objects.equals(getDecision(), eventLog.getDecision());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(this);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        EventLog eventLog = (EventLog) o;
+//        return logId == eventLog.logId &&
+//                Objects.equals(getTelNum(), eventLog.getTelNum()) &&
+//                Objects.equals(getEventDate(), eventLog.getEventDate()) &&
+//                Objects.equals(getDecision(), eventLog.getDecision());
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hashCode(this);
+//    }
 }

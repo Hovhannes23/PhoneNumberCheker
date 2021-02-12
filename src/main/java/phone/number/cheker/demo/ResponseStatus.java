@@ -1,5 +1,6 @@
 package phone.number.cheker.demo;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -9,31 +10,10 @@ import java.net.URI;
 
 
 @Component
+@Data
 public class ResponseStatus implements Serializable {
 
 
     TelNumStatus status;
-
-
-    public ResponseStatus( ) {
-    }
-
-    public TelNumStatus getStatus()
-    {
-        return status;
-    }
-
-    public void setStatus(TelNumStatus status) {
-
-        this.status = status;
-    }
-
-    @Override
-    public String toString() {
-        return "Response{" +
-                "status='" + status + '\'' +
-                '}';
-    }
-
 
 }

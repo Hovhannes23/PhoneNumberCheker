@@ -1,11 +1,14 @@
 package phone.number.cheker.demo.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /** This class is an entity of table B  */
 @Entity
 @Table(name ="B")
+@Data
 public class B {
 
     /** Use column tel_num as id */
@@ -17,28 +20,4 @@ public class B {
     @Column(name = "add_date")
     private LocalDateTime addDate;
 
-
-    public B() {
-    }
-
-    public B(String telNum){
-        this.id = telNum;
-        this.addDate = LocalDateTime.now();
-    }
-
-    public String getTelNum() {
-        return id;
-    }
-
-    public void setTelNum(String telNum) {
-        this.id = telNum;
-    }
-
-    public LocalDateTime getAddDate() {
-        return addDate;
-    }
-
-    public void setAddDate(LocalDateTime addDate) {
-        this.addDate = addDate;
-    }
 }
