@@ -27,6 +27,7 @@ public class MyController {
 
     @RequestMapping("/")
     public String mainPage() {
+
         return "mainPage";
     }
 
@@ -35,19 +36,18 @@ public class MyController {
     @ResponseBody
     public ResponseStatus checkTelNum(@RequestParam String telNum, Model model){
 
-        TelNumStatus status = null;
+        TelNumStatus telNumStatus = null;
 
         try {
-          status = telNumCheker.checkTelNum(telNum);
+          telNumStatus = telNumCheker.checkTelNum(telNum);
         }
         catch (Exception e) {
             e.printStackTrace();
         }
 
+        model.addAttribute("telNumStatus",telNumStatus);
         ResponseStatus responseStatus = new ResponseStatus();
-        responseStatus.setStatus(status);
-
-        model.addAttribute("status",status);
+        responseStatus.setStatus(telNumStatus);
 
         System.out.println(responseStatus);
         return responseStatus;

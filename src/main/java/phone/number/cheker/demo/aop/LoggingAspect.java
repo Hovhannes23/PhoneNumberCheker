@@ -34,7 +34,7 @@ public class LoggingAspect {
        Model model = (Model) args[1];
 
        LocalDateTime now = LocalDateTime.now();
-       TelNumStatus telNumStatus =  (TelNumStatus) model.getAttribute("status");
+       TelNumStatus telNumStatus =  (TelNumStatus) model.getAttribute("telNumStatus");
 
         assert telNumStatus != null;
         String status = telNumStatus.name();
