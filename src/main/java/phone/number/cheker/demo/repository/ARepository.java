@@ -11,5 +11,4 @@ public interface ARepository extends JpaRepository<A, String> {
     @Override
     boolean existsById(String s);
 
-
 }

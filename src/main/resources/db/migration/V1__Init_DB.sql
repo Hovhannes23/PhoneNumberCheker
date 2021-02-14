@@ -9,6 +9,14 @@ USE phonenumbercheker;
 
     drop table if exists event_log;
 
+     drop table if exists tel_num;
+
+    create table tel_num (
+       tel_num varchar(255) not null,
+        add_date datetime(6),
+        primary key (tel_num)
+    ) engine=InnoDB;
+
     create table a (
        tel_num varchar(255) not null,
         add_date datetime(6),
@@ -33,7 +41,7 @@ USE phonenumbercheker;
 
 
 
-INSERT INTO A (tel_num, add_date) VALUES
+INSERT INTO a (tel_num, add_date) VALUES
 ('79260595365', '2019-05-03 11:55:36'),
 ('79152150563', '2020-10-15 15:35:23'),
 ('79256548525', '2020-11-23 00:55:28'),
@@ -48,7 +56,7 @@ INSERT INTO A (tel_num, add_date) VALUES
 ;
 
 
-INSERT INTO B (tel_num, add_date) VALUES
+INSERT INTO b (tel_num, add_date) VALUES
 ('79260595365', '2019-05-03 11:55:36'),
 ('79256548525', '2020-11-23 00:55:28'),
 ('79260595387', '2020-12-07 21:33:36'),
