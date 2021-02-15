@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Data
-public class TelNum {
+public abstract class  TelNum {
 
     /** Use column tel_num as id */
     @Id
